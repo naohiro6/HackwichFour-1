@@ -11,12 +11,13 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
   
-    var myFriends = ["Ryan", "Nicole", "Sara", "Tyler"]
+    var myFriends = ["Kapolei Kalapawai"]
     
     var restaurantImageData = [String]()
     
     @IBOutlet weak var tableView: UITableView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -51,9 +52,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: <#T##IndexPath#>, animated: true)
+        
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "mySegue"
         {
